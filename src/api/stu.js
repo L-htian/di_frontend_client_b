@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 const api = {
-    stu: 'http://localhost:8089/clientB/api/stu'
+    stu: 'http://localhost:8091/clientB/api/stu'
 }
 
 export function getStuInfo(account) {
@@ -10,6 +10,7 @@ export function getStuInfo(account) {
         type: 'GET',
         data: {},
         dataType: 'text',
+        contentType: 'application/json',
         async: false,
         success: function (data) {
             re = (JSON.parse(data)).content
@@ -18,13 +19,14 @@ export function getStuInfo(account) {
     return re
 }
 
-export function getStuLessonInfo(){
+export function getStuLessonInfo() {
     let re
-    $.ajax(`${api.stu}/getLessonInfo`,{
-        type:'GET',
-        dataType:'text',
-        async:false,
-        success:function (data){
+    $.ajax(`${api.stu}/getLessonInfo`, {
+        type: 'GET',
+        dataType: 'text',
+        contentType: 'application/json',
+        async: false,
+        success: function (data) {
             re = (JSON.parse(data)).content
         }
     })
@@ -62,12 +64,13 @@ export function chooseStuLesson(chooseInfo) {
     return re
 }
 
-export function getChoosedLesson(stuId){
+export function getChoosedLesson(stuId) {
     let re
-    $.ajax(`${api.stu}/getChoosedLesson/${stuId}`,{
+    $.ajax(`${api.stu}/getChoosedLesson/${stuId}`, {
         type: 'GET',
         data: {},
         dataType: 'text',
+        contentType: 'application/json',
         async: false,
         success: function (data) {
             re = (JSON.parse(data)).content
@@ -76,12 +79,13 @@ export function getChoosedLesson(stuId){
     return re
 }
 
-export function dropLesson(lessonInfo){
+export function dropLesson(lessonInfo) {
     let re
     $.ajax(`${api.stu}/dropLesson`, {
         type: "POST",
         data: JSON.stringify(lessonInfo),
         contentType: 'application/json',
+        dataType: 'text',
         async: false,
         success: function (data) {
             re = (JSON.parse(data)).content

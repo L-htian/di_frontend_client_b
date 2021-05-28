@@ -60,9 +60,10 @@ export default {
         account: '181250000',
         password: '1232456'
       }
-      this.set_stuId(this.student_Info.id)
       console.log(this.login_account)
       this.student_Info = getStuInfo(this.login_account)
+      this.set_stuId(this.student_Info.id)
+
     },
     changePassword() {
       let re = {
@@ -70,7 +71,7 @@ export default {
         "password": this.student_Info.password
       }
       console.log(re)
-      if(changeStuPassword(re)){
+      if (changeStuPassword(re)) {
         this.$notify({
           title: '修改成功',
           // message: '您成功的修改了您的密码',
