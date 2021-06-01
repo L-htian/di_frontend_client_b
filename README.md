@@ -1,11 +1,13 @@
 # di_frontend_client_b
-# <font color='red'>需要改api端口</font>
+
 ## Project setup
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+端口为8081
+对应后端端口为8091
 ```
 npm run serve
 ```
@@ -20,5 +22,3 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
